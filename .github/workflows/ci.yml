@@ -47,7 +47,7 @@ jobs:
 
     defaults:
       run:
-        shell: bash -lvxeo pipefail {0}
+        shell: bash -leo pipefail {0}
 
     steps:
       - uses: actions/checkout@v4
@@ -67,6 +67,7 @@ jobs:
           patch_location=${PWD}/.github/docker-compose.patch
           git clone https://github.com/ChannelFinder/ChannelFinderService ~/ChannelFinderService
           cd ~/ChannelFinderService
+          mvn --version
           mvn install -D skipTests
           patch -u docker-compose.yml -i ${patch_location}
           docker-compose up --build -d
