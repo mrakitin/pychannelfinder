@@ -82,16 +82,16 @@ jobs:
       - name: Start ChannelFinder server
         run: |
           patch_location=${PWD}/.github/docker-compose.patch
-          cd ChannelFinderService
+          cd ChannelFinderService/
           mvn --version
           mvn install -D skipTests
           patch -u docker-compose.yml -i ${patch_location}
           docker-compose up --build -d
           sleep 30
 
-      # - name: Check ChannelFinder server is accessible
-      #   run: |
-      #     curl -X 'GET' -k 'https://localhost:8443/ChannelFinder' -H 'accept: */*'
+      - name: Check ChannelFinder server is accessible
+        run: |
+          curl -X 'GET' -k 'https://localhost:8443/ChannelFinder' -H 'accept: */*'
 
       - name: Test package
         run: >-
@@ -100,6 +100,7 @@ jobs:
 
       - name: Check docker logs
         run: |
+          cd ChannelFinderService/
           docker-compose logs channelfinder
 
       - name: Upload coverage report
