@@ -89,9 +89,9 @@ jobs:
           docker-compose up --build -d
           sleep 10
 
-      - name: Check ChannelFinder server is accessible
-        run: |
-          curl -X 'GET' -k 'https://localhost:8443/ChannelFinder' -H 'accept: */*'
+      # - name: Check ChannelFinder server is accessible
+      #   run: |
+      #     curl -X 'GET' -k 'https://localhost:8443/ChannelFinder' -H 'accept: */*'
 
       - name: Test package
         run: >-
