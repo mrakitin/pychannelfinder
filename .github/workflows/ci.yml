@@ -62,6 +62,13 @@ jobs:
       - name: Install package
         run: python -m pip install .[test]
 
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: maven
+
       - name: Start ChannelFinder server
         run: |
           patch_location=${PWD}/.github/docker-compose.patch
