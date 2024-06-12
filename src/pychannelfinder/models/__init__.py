@@ -1,5 +1,7 @@
 """Contains all the data models used in inputs/outputs"""
 
+from __future__ import annotations
+
 from .channel import Channel
 from .create_2_body import Create2Body
 from .create_4_body import Create4Body

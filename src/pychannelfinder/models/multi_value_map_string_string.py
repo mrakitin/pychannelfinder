@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
@@ -20,7 +22,7 @@ class MultiValueMapStringString:
         empty (Union[Unset, bool]):
     """
 
-    all_: Union[Unset, "MultiValueMapStringStringAll"] = UNSET
+    all_: Union[Unset, MultiValueMapStringStringAll] = UNSET
     empty: Union[Unset, bool] = UNSET
     additional_properties: Dict[str, List[str]] = _attrs_field(init=False, factory=dict)
 
@@ -45,7 +47,9 @@ class MultiValueMapStringString:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.multi_value_map_string_string_all import MultiValueMapStringStringAll
+        from ..models.multi_value_map_string_string_all import (
+            MultiValueMapStringStringAll,
+        )
 
         d = src_dict.copy()
         _all_ = d.pop("all", UNSET)

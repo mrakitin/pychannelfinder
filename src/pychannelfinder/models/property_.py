@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define

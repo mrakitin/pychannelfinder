@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from http import HTTPStatus
 from typing import Any, Dict, Optional, Union
 
@@ -12,7 +14,7 @@ from ...types import UNSET, Response
 def _get_kwargs(
     scroll_id: str,
     *,
-    search_parameters: "MultiValueMapStringString",
+    search_parameters: MultiValueMapStringString,
 ) -> Dict[str, Any]:
     params: Dict[str, Any] = {}
 
@@ -30,14 +32,18 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[Any]:
+def _parse_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Optional[Any]:
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
         return None
 
 
-def _build_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Response[Any]:
+def _build_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Response[Any]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -50,7 +56,7 @@ def sync_detailed(
     scroll_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    search_parameters: "MultiValueMapStringString",
+    search_parameters: MultiValueMapStringString,
 ) -> Response[Any]:
     """
     Args:
@@ -81,7 +87,7 @@ async def asyncio_detailed(
     scroll_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    search_parameters: "MultiValueMapStringString",
+    search_parameters: MultiValueMapStringString,
 ) -> Response[Any]:
     """
     Args:

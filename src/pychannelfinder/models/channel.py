@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
@@ -25,8 +27,8 @@ class Channel:
 
     name: Union[Unset, str] = UNSET
     owner: Union[Unset, str] = UNSET
-    properties: Union[Unset, List["Property"]] = UNSET
-    tags: Union[Unset, List["Tag"]] = UNSET
+    properties: Union[Unset, List[Property]] = UNSET
+    tags: Union[Unset, List[Tag]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:

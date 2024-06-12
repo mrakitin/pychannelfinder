@@ -30,7 +30,10 @@ classifiers = [
   "Typing :: Typed",
 ]
 dynamic = ["version"]
-dependencies = []
+dependencies = [
+  "attrs",
+  "httpx",
+]
 
 [project.optional-dependencies]
 test = [
@@ -38,6 +41,8 @@ test = [
   "pytest-cov >=3",
 ]
 dev = [
+  "pre-commit",
+  "pylint",
   "pytest >=6",
   "pytest-cov >=3",
 ]
@@ -118,11 +123,11 @@ extend-select = [
   "PL",       # pylint
   "PT",       # flake8-pytest-style
   "PTH",      # flake8-use-pathlib
-  "RET",      # flake8-return
+  # "RET",      # flake8-return
   "RUF",      # Ruff-specific
   "SIM",      # flake8-simplify
   "T20",      # flake8-print
-  "UP",       # pyupgrade
+  # "UP",       # pyupgrade
   "YTT",      # flake8-2020
   "EXE",      # flake8-executable
   "NPY",      # NumPy specific rules

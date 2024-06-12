@@ -1,5 +1,7 @@
 """Contains some shared types for properties"""
 
+from __future__ import annotations
+
 from http import HTTPStatus
 from typing import BinaryIO, Generic, Literal, MutableMapping, Optional, Tuple, TypeVar
 
