@@ -39,14 +39,14 @@ class Channel:
         properties: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.properties, Unset):
             properties = []
-            for properties_item_data in self.properties:
+            for properties_item_data in self.properties:  # pylint: disable=not-an-iterable
                 properties_item = properties_item_data.to_dict()
                 properties.append(properties_item)
 
         tags: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.tags, Unset):
             tags = []
-            for tags_item_data in self.tags:
+            for tags_item_data in self.tags:  # pylint: disable=not-an-iterable
                 tags_item = tags_item_data.to_dict()
                 tags.append(tags_item)
 

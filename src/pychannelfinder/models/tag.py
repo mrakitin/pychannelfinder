@@ -36,7 +36,7 @@ class Tag:
         channels: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.channels, Unset):
             channels = []
-            for channels_item_data in self.channels:
+            for channels_item_data in self.channels:  # pylint: disable=not-an-iterable
                 channels_item = channels_item_data.to_dict()
                 channels.append(channels_item)
 
