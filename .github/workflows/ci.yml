@@ -65,12 +65,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: ChannelFinder/ChannelFinderService
-          path: ../ChannelFinderService
+          path: ChannelFinderService
           fetch-depth: 0
 
       - name: Install package
         run: |
-          cp ../ChannelFinderService/pom.xml .
+          cp ChannelFinderService/pom.xml .
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
