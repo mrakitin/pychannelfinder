@@ -99,6 +99,7 @@ jobs:
           --durations=20
 
       - name: Check docker logs
+        if: always()
         run: |
           cd ChannelFinderService/
           docker-compose logs channelfinder
