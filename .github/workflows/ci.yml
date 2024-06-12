@@ -82,7 +82,7 @@ jobs:
       - name: Start ChannelFinder server
         run: |
           patch_location=${PWD}/.github/docker-compose.patch
-          cd ../ChannelFinderService
+          cd ChannelFinderService
           mvn --version
           mvn install -D skipTests
           patch -u docker-compose.yml -i ${patch_location}
