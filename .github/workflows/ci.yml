@@ -87,7 +87,7 @@ jobs:
           mvn install -D skipTests
           patch -u docker-compose.yml -i ${patch_location}
           docker-compose up --build -d
-          sleep 10
+          sleep 30
 
       # - name: Check ChannelFinder server is accessible
       #   run: |
@@ -97,6 +97,10 @@ jobs:
         run: >-
           python -m pytest -ra --cov --cov-report=xml --cov-report=term
           --durations=20
+
+      - name: Check docker logs
+        run: |
+          docker-compose logs channelfinder
 
       - name: Upload coverage report
         uses: codecov/codecov-action@v4.3.0
