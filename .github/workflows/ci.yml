@@ -47,7 +47,7 @@ jobs:
 
     defaults:
       run:
-        shell: bash -lxeo pipefail {0}
+        shell: bash -leo pipefail {0}
 
     steps:
       - uses: actions/checkout@v4
