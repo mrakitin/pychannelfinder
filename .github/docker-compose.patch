@@ -1,0 +1,13 @@
+diff --git a/docker-compose.yml b/docker-compose.yml
+index b85191b..6c8f3bd 100644
+--- a/docker-compose.yml
++++ b/docker-compose.yml
+@@ -18,7 +18,7 @@ services:
+           echo 'Waiting for Elasticsearch'
+           sleep 1
+         done
+-        java -jar /channelfinder/ChannelFinder-*.jar"
++        java -jar /channelfinder/ChannelFinder-*.jar --demo-data=1"
+
+   elasticsearch:
+     image: docker.elastic.co/elasticsearch/elasticsearch:8.11.2
