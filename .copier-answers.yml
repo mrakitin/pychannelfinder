@@ -1,0 +1,12 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 2024.04.23
+_src_path: gh:scientific-python/cookie
+backend: hatch
+email: mrakitin@bnl.gov
+full_name: Max Rakitin
+license: BSD
+org: mrakitin
+project_name: pychannelfinder
+project_short_description: Python client for ChannelFinder
+url: https://github.com/mrakitin/pychannelfinder
+vcs: true
