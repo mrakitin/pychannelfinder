@@ -95,7 +95,7 @@ jobs:
 
       - name: Test package
         run: >-
-          python -m pytest -ra --cov --cov-report=xml --cov-report=term
+          python -m pytest -s -ra --cov --cov-report=xml --cov-report=term
           --durations=20
 
       - name: Check docker logs
