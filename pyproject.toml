@@ -37,6 +37,7 @@ dependencies = [
 
 [project.optional-dependencies]
 test = [
+  "pandas",
   "pytest >=6",
   "pytest-cov >=3",
 ]
